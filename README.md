@@ -1,1 +1,69 @@
-# Calculator-app
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculator</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+    input {
+      width: 80px;
+      padding: 5px;
+      margin: 5px;
+      font-size: 18px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      margin: 5px;
+      background-color: darkblue;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: navy;
+    }
+  </style>
+</head>
+<body>
+  <h1>Simple Calculator</h1>
+  <input type="number" id="num1" placeholder="Number 1">
+  <input type="number" id="num2" placeholder="Number 2"><br>
+  <button onclick="add()">Add</button>
+  <button onclick="subtract()">Subtract</button>
+  <button onclick="multiply()">Multiply</button>
+  <button onclick="divide()">Divide</button>
+  <h2 id="result">Result: </h2>
+
+  <script>
+    function add() {
+      let a = parseFloat(document.getElementById("num1").value);
+      let b = parseFloat(document.getElementById("num2").value);
+      document.getElementById("result").innerHTML = "Result: " + (a + b);
+    }
+    function subtract() {
+      let a = parseFloat(document.getElementById("num1").value);
+      let b = parseFloat(document.getElementById("num2").value);
+      document.getElementById("result").innerHTML = "Result: " + (a - b);
+    }
+    function multiply() {
+      let a = parseFloat(document.getElementById("num1").value);
+      let b = parseFloat(document.getElementById("num2").value);
+      document.getElementById("result").innerHTML = "Result: " + (a * b);
+    }
+    function divide() {
+      let a = parseFloat(document.getElementById("num1").value);
+      let b = parseFloat(document.getElementById("num2").value);
+      if (b === 0) {
+        document.getElementById("result").innerHTML = "Result: Cannot divide by zero!";
+      } else {
+        document.getElementById("result").innerHTML = "Result: " + (a / b);
+      }
+    }
+  </script>
+</body>
+</html>
